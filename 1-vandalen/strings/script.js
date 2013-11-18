@@ -3,21 +3,18 @@
 window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
-	var convertString = function(str){
+    
+    var convertString = function(str){
+    var pattern = /[aA]/g;
+    str = str.replace(pattern, "#");
+    return str;
+    
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	
-
-
-
-
-
-
 	};
 	// ------------------------------------------------------------------------------
-
-
 	// Kod för att hantera utskrift och inmatning. Denna ska du inte behöva förändra
 	var p = document.querySelector("#value"); // Referens till DOM-noden med id="#value"
 	var input = document.querySelector("#string");
@@ -38,7 +35,4 @@ window.onload = function(){
 		}
 	
 	});
-
-
-
 };
