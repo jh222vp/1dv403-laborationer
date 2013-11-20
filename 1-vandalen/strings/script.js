@@ -3,12 +3,27 @@
 window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
+    var out = "";
     
     var convertString = function(str){
+    for (var i = 0;i < str.length; i++){
+    // Om aktuell bokstav är lika med aktuell bokstav uppercase.
+    if (str.charAt(i) == str.charAt(i).toUpperCase())
+    {
+    // då blir bokstaven lowercase
+    out += str.charAt(i).toLowerCase();
+    }
+    else
+    {
+    // aktuell bokstav är annars lowercase, och ska bli uppercase
+    out += str.charAt(i).toUpperCase();
+    }
+    }
+
     var pattern = /[aA]/g;
-    str = str.replace(pattern, "#");
-    return str;
+    out = out.replace(pattern, "#");
     
+    return out;
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
