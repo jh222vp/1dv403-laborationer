@@ -1,0 +1,17 @@
+body {
+background-color:#8AB7FF;
+}
+
+#container {
+margin:auto;
+width:500px;
+}
+
+header {
+    margin:auto;
+}
+p {
+    background-color:#85FF75;
+    border-style:solid;
+    border-width:1px;
+}
