@@ -1,41 +1,27 @@
 "use strict";
-
-
-   var makePerson = function(persArr) {
-   
-   var result = {};
-
-   
-    var personObj = {};
-    personObj.minAge = persArr[1].age;
-    personObj.maxAge = persArr[2].age;
-    personObj.averageAge = Math.round((persArr[0].age+persArr[1].age+persArr[2].age) / 3);
+    var makePerson = function(persArr) {
+    var i = 0;
+    var totalAge = 0;
+    var ages = [];
+    var name = [];
     
-    //Loopar genom arrayen
-    var names = persArr.map(function(person){ return person.name; });
-    //names.sort();
+    for (i; i < persArr.length; i++) 
+    {
+        totalAge += persArr[i].age;
+        ages.push(persArr[i].age);
+        name.push(persArr[i].name);
+    }
     
-    personObj.names = names.sort(function (a, b) { return a.localeCompare(b)}).join(", ");
-    //personObj.names = names.sort();
-    
-    //names.sort(function (a, b) { return a.localeCompare(b)});
-    
-    //personObj.names = persArr[1].name +","+ persArr[0].name + ","+ persArr[2].name;
-    //personObj.names.toString();
-    //personObj.names = persArr[2].name;
-    //personObj.names = persArr[0].name;
+    ages.sort();
+    var personObj = {
+        minAge:ages[0],
+        maxAge:ages[ages.length -1],
+        averageAge:Math.round(totalAge / ages.length)
+    };
+    //Sorterar namnen ur arrayen och skrever ut dem som en string med hjälp av .join
+    personObj.names = name.sort(function (a, b) { return a.localeCompare(b)}).join(", ");
     
     return personObj;
 };
-    //names.sort(function (a, b) { return a.localeCompare(b)});
-    
     var data = [{name: "John Häggerud", age: 37}, {name: "Johan Leitet", age: 36}, {name: "Mats Loock", age: 46}];
-
-    data.sort(function (a, b) { return a.localeCompare(b)});
-    var result = makePerson(data);
-    
-    
-    
-
-
-//var personAges = persArr.map();
+    makePerson(data);

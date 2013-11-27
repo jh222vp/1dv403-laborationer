@@ -1,14 +1,25 @@
 "use strict";
 window.onload = function(){
-	var secret = Math.round(Math.random()*(99)+1); // Detta tal behöver bytas ut mot ett slumpat tal.
-	// I denna funktion ska du skriva koden för att hantera "spelet"
+    //Randomgeneratorn för ett tal
+	var secret = Math.round(Math.random()*(99)+1);
+	var guesses = 0;
 	var guess = function(number){
     console.log(secret);
+    
+    
+        if(number < 0 || number > 100)
+        {
+        return [false, "Talet måste vara mellan 0 och 100!"];
+        }
+        else
+        {
+            guesses++;
+        }
         if (secret < number)
         {
             console.log("Too low");
             console.log("Du gissade: " + number);
-            return [false, "Det hemliga talet är lägre!"];
+            return [false, "Det hemliga talet är lägre!, du har gissat " + guesses + " gånger"];
                 
         }
         
@@ -16,28 +27,18 @@ window.onload = function(){
         {
             console.log("Too low");
             console.log("Du gissade: " + number);
-            return [false, "Det hemliga talet är högre!"];
+            return [false, "Det hemliga talet är högre! du har gissat " + guesses + " gånger"];
+            
         }
         
         if (secret == number)
         {
             console.log("Det hemliga talet: " + secret);
-            return [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."];
+            return [true, "Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + guesses + " gissningar för att hitta det."];
+            
         }
+
 	};
- // Du når den yttre variabeln secret innifrån funktionen.
- // Detta nummer är det som användaren gissade på.
-			
-		// Plats för förändring.
-
-
-
-
-		// Returnera exempelvis: 
-		// [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
-		// [false, "Det hemliga talet är högre!"]
-		// [false, "Det hemliga talet är lägre!"]
-		// [false, "Talet är utanför intervallet 0 - 100"]		
 	
 	// ------------------------------------------------------------------------------
 	// Kod för att hantera utskrift och inmatning. Denna ska du inte behöva förändra

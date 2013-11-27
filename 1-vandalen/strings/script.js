@@ -2,10 +2,13 @@
 
 window.onload = function(){
 
-	// I denna funktion ska du skriva koden för att hantera "spelet"
-    var out = "";
-    
     var convertString = function(str){
+    //out får värdet "" så att det gamla värdet ska bytas ut.
+    if(str === ""){
+        return "Skitsaker";
+    }
+    
+    var out = "";
     for (var i = 0;i < str.length; i++){
     // Om aktuell bokstav är lika med aktuell bokstav uppercase.
     if (str.charAt(i) == str.charAt(i).toUpperCase())
@@ -19,14 +22,11 @@ window.onload = function(){
     out += str.charAt(i).toUpperCase();
     }
     }
-
-    var pattern = /[aA]/g;
+    //Ersättar alla stora och små aA med ett #. 
+    var pattern = /a/gi;
     out = out.replace(pattern, "#");
     
     return out;
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	
 	};
 	// ------------------------------------------------------------------------------
