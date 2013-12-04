@@ -11,7 +11,20 @@ header {
     margin:auto;
 }
 p {
-    background-color:#85FF75;
+    background-color:white;
+    padding-left:10px;
+}
+h4 {
+    background-color:#FA8178;
+    text-align:right;
+    padding-right:10px;
+}
+#outMessage {
     border-style:solid;
-    border-width:1px;
+}
+a {
+    float:right;
+}
+img {
+    padding-bottom:10px;
 }
