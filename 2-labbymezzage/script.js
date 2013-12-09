@@ -28,8 +28,7 @@
                         MessageBoard.messages.push(mess);
                         MessageBoard.renderMessages();
                         textArea.value = "";
-                        return that.message.replace(/[\n\r]/g, "<br />");
-                                
+                        
                         } 
                     }, 
                     false); 
@@ -66,9 +65,9 @@
             //Klickar man på bilden så visas datumet i form av en alert.
             var time = document.createElement("a");
             var imgTime = document.createElement("img");
-            imgTime.className = "imgTime";
+            //imgTime.className = "imgTime";
             imgTime.setAttribute("src", "clock.png");
-            imgTime.width = "20";
+            //imgTime.width = "20";
             imgTime.height = "20";
             date.appendChild(time);
             time.appendChild(imgTime);
