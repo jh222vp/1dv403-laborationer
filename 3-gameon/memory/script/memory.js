@@ -4,21 +4,42 @@
 var Memory = {
     
     imageArray: [],
-    init : function(){
-        //Deklarerar variabler
+    init : function(rows, cols){
         
-        //Dessa två variabler håller i hur många memorybrickor det är i höjd och sidled.
-        var cols = 4;
-        var rows = 4;
+        //Slumpar fram siffrorna med hjälp av random.js och fyller på arrayen imageArray
+        var random = RandomGenerator.getPictureArray(rows, cols);
         
-        //Slumpar fram siffrorna med hjälp av random.js
-        Memory.imageArray = RandomGenerator.getPictureArray(cols, rows);
+        //Tar mig till vanilj-funktionen nedan
+        this.displayMemory(rows, cols, random);
         
-        /*for (var i = 0; i < Memory.imageArray.length; i++) {
-			Memory.imageArray[i] = "img/" + Memory.imageArray[i] + ".png";
-			renderBoard(i); //Skapa en LI tagg för varje bild.
-        }*/
+        
+    },
+    displayMemory : function(rows, cols, random) {
+        var MemoryDiv = document.getElementById('MemoryDiv');
+        var table = document.createElement("table");
+        
+        var count = 0;
+        
+        for (var i = 0; i < rows; i++) {
+			//Memory.imageArray[i] = "pics/" + Memory.imageArray[i] + ".png";
+            var tr = document.createElement("tr");
+            
+            for (var e = 0; e < cols; e++) {
+                //Memory.imageArray[i] = "pics/" + Memory.imageArray[i] + ".png";
+                var card = new Const(random[count]);
+                random.push(card);
+
+                tr.appendChild(card.getTd());
+                count++;
+            }
+            table.appendChild(tr);
+        }
+        MemoryDiv.appendChild(table);
+        
         console.log(Memory.imageArray);
-    }
+},
 };
-window.onload = Memory.init; 
+//Kör detta allra först när sidan laddas i
+window.onload = function (){
+    Memory.init(4,4);
+};
