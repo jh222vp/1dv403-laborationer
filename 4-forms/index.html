@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <main id="main">
+            <section>
+                <form name="formname" id="formname" action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php" method="post" >
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <label>Förnamn:   </label>
+                            <input type="text" id="name" name="name" placeholder="Förnamn" />
+                            <div class="error" id="errormessage"></div>
+                        </div>
+                        <div class="large-4 columns">
+                            <label>Efternamn:   </label>
+                            <input type="text" id="surname" name="surname" placeholder="Efternamn" />
+                            <div id="errormessage1"></div>
+                        </div>
+                        <div class="large-4 columns">
+                            <label>Postnummer</label>
+                            <input type="text" id="postalcode" name="postalcode" placeholder="Postnummer"  />
+                            <div id="errormessage2"></div>
+                        </div>
+                        <div class="large-4 columns">
+                            <label>E-post</label>
+                            <input type="text" id="email" name="email" placeholder="E-post" />
+                            <div id="errormessage3"></div>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="large-7 columns">
+                            <label>Select</label>
+                            <select id="select" name="select">
+                                <option value="Cheap">Låg</option>
+                                <option value="Medium">Mellan</option>
+                                <option value="Expensive">Dyr</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-field large-12 columns">
+                    <button type="submit" value="submit" id="button" class="button success">Genomför köp</button>
+                    </div>
+                    <div id="button2">
+                  </div>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

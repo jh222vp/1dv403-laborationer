@@ -1,0 +1,9 @@
+            //var form = document.getElementById("formname");
+            //var fname = document.createTextNode(form.elements.name.value);
+            //var sname = document.createTextNode(form.elements.surname.value);
+            //var postalcodename = document.createTextNode(form.elements.postalcode.value);
+            //var emailname = document.createTextNode(form.elements.email.value);
+            
+                    //dim: function() {
+        //    document.getElementById("button");
+        //},

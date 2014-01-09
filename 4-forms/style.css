@@ -1,0 +1,13 @@
+.displayshow{
+    display: block;
+    visibility: visible;
+}
+#db {
+z-index: 1;
+opacity: 0.2;
+width:100%;
+height:100%;
+background-color: black;
+display:block;
+position:absolute;
+}
